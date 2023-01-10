@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front end music festival</title>
+    <link rel="icon" href="./I CON.jpg" type="image/x-icon">
+    <script src="./back.js"></script>
+    <link rel="stylesheet" href="./back.css">
+    <link rel="stylesheet" href="./bc.css">
+    <script src="./_js/jquery-3.6.0.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
+    @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: 'Noto Sans TC', sans-serif;
+        /* outline: solid goldenrod; */
+    }
+
+    .main-header {
+        background: linear-gradient(0deg, #181718, #eb660e);
+    }
+
+    .main-header .container {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        max-width: 1200px;
+        margin: auto;
+        position: relative;
+
+    }
+
+    .main-header .logo {
+        width: 100px;
+        margin-right: 50px;
+    }
+
+    .main-header .logo img {
+        width: 100%;
+        vertical-align: middle;
+    }
+
+    .main-header .main-nav {
+        /* margin: auto; */
+        display: flex;
+        font-size: 20px;
+        padding-left: 0%;
+
+    }
+
+    .main-header .main-nav a {
+        font-family: 'Noto Sans TC', sans-serif;
+        text-decoration: none;
+        color: #fff;
+        padding: 5px 1em;
+        position: relative;
+        transform: translateY(0px);
+        transition: .3s;
+        /* font-size: xx-large; */
+    }
+
+    .main-header .main-nav a:hover {
+        transform: translateY(-10px);
+    }
+
+    .main-header .main-nav a:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        bottom: -5px;
+        height: 0;
+        border-bottom: 1px solid #fff;
+        transition: .5s;
+    }
+
+    .main-header .main-nav a:hover:after {
+        left: 1em;
+        right: 1em;
+    }
+
+    .main-header .flag img {
+
+        padding: auto;
+        width: 30PX;
+        display: inline-block
+    }
+
+    .flag {
+
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+    }
+
+    .backtext {
+        font-size: 20px;
+        text-align: center;
+
+        color: white;
+    }
+
+    .backtext img {
+        padding: 50px;
+
+
+    }
+
+    .backtop {
+
+        position: fixed;
+        bottom: 10px;
+        right: 60px;
+        /* z-index: 99; */
+
+    }
+
+    .backtop-pic {
+        width: 3vw;
+        height: 3vw;
+    }
+
+    .backtop img {
+        width: 100%;
+        height: 100%;
+
+        border-radius: 100px;
+        /* object-fit:fill; */
+    }
+
+    #top-btn:hover {
+        cursor: pointer;
+    }
+
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
+
+    .blue {
+        background: #3498db;
+    }
+
+    .gray {
+        background: #4a454c;
+    }
+
+    .navy {
+        background: #34495e;
+    }
+
+    .green {
+        background: #2ecc71;
+    }
+
+    .red {
+        background: #e74c3c;
+    }
+
+    .orange {
+        background: #f39c12;
+    }
+
+    .cs335,
+    .cs426,
+    .md303,
+    .md352,
+    .md313,
+    .cs240 {
+        font-weight: 300;
+        cursor: pointer;
+    }
+
+    
+
+    *,
+    *:before,
+    *:after {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    table {
+        font-family: 'Open Sans', Helvetica;
+        color: #efefef;
+        margin: auto;
+        padding: 20px;
+        font-weight: 800;
+        font-size: 18px;
+    }
+
+    table tr:nth-child(2n) {
+        background: #fefeff;
+    }
+
+    table tr:nth-child(2n+3) {
+        background: rgb(245, 245, 245);
+    }
+
+    table th,
+    table td {
+        padding: 1em;
+        width: 10em;
+    }
+
+    .days,
+    .time {
+        background: #34495e;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 200;
+        text-align: center;
+      
+      
+    }
+   
+
+    .time {
+        width: 3em !important;
+
+    }
+
+    /* Add this attribute to the element that needs a tooltip */
+    [data-tooltip] {
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    /* Hide the tooltip content by default */
+    [data-tooltip]:before,
+    [data-tooltip]:after {
+        visibility: hidden;
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+        opacity: 0;
+        pointer-events: none;
+        -moz-transition: ease 0.5s all;
+        -o-transition: ease 0.5s all;
+        -webkit-transition: ease 0.5s all;
+        transition: ease 0.5s all;
+    }
+
+    /* Position tooltip above the element */
+    [data-tooltip]:before {
+        position: absolute;
+        bottom: 110%;
+        left: 50%;
+        margin-bottom: 5px;
+        margin-left: -80px;
+        padding: 7px;
+        width: 160px;
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+        background-color: black;
+        color: #fff;
+        content: attr(data-tooltip);
+        text-align: center;
+        /* font-size: 80px; */
+        line-height: 1.2;
+    }
+
+    /* Triangle hack to make tooltip look like a speech bubble */
+    [data-tooltip]:after {
+        position: absolute;
+        bottom: 110%;
+        left: 50%;
+        margin-left: -5px;
+        width: 0;
+        border-top: 5px solid rgb(223, 221, 221);
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+        content: " ";
+        font-size: 10;
+        line-height: 0;
+    }
+
+    /* Show tooltip content on hover */
+    [data-tooltip]:hover:before,
+    [data-tooltip]:hover:after {
+        visibility: visible;
+        bottom: 90%;
+        filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+        opacity: 1;
+    }
+
+    .tab a {
+        color: #eff0f1;
+        text-decoration: none;
+    }
+    .gray{
+        text-align:center;
+        font-weight: 400;
+        font-size: 24px;
+        padding: 0;
+        margin: auto;
+    }
+    .orange,.blue{
+        text-align:center;
+        font-weight: 600;
+        font-size: 32px;
+        padding: 0;
+        margin: auto;
+    }
+</style>
+
+
+
+<body>
+    <header class="main-header">
+        <div class="container">
+            <a href="http://127.0.0.1:5501/demo.html" class="logo">
+                <img src="./icon.png" alt="">
+
+            </a>
+            <nav class="main-nav">
+                <a href="about.html">關於</a>
+                <a href="art.html">表演藝人/樂團</a>
+                <a href="time.html">演出時段</a>
+                <a href="ticket.html">門票</a>
+                <a href="Goods.html">周邊商品</a>
+              
+
+
+
+            </nav>
+            <div class="flag ml-auto">
+                <a href="time.html"><img src="./zh-hant.png" alt="tw"></a>
+                <a href="timeen.html"><img src="./en.png" alt="en"></a>
+            </div>
+        </div>
+    </header>
+    <!-- / College Timetable -->
+    <div class='tab'>
+        <table cellpadding='0' cellspacing='0'>
+            <tr  class='days'>
+                <th>11/17(四)</th>
+                <th>能量舞台</th>
+                <th>夢想舞台</th>
+
+            </tr>
+
+            <tr>
+                <td class='time'>14:00</td>
+                <td></td>
+                <td rowspan="1.5" class='cs335 blue lab' data-tooltip='Dream pop'><a href="https://www.youtube.com/watch?v=dUuhTw3gB5I"target="_blank"> 溫蒂漫步</a>
+                </td>
+
+            </tr>
+            <tr>
+                <td class='time'>15:00</td>
+                <td colspan="2" class='gray' data-tooltip='Dream pop'>場地整理</td>
+    
+
+            </tr>
+            <tr>
+                <td class='time'>16:00</td>
+                <td class='cs240 orange lab' data-tooltip='情緒搖滾'>
+                    <a href="https://www.youtube.com/watch?v=uK4ExmTDxPM"target="_blank"> 康士坦的變化球</a>
+                </td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td class='time'>17:00</td>
+                <td></td>
+                <td rowspan="1.5" class='cs335 blue lab' data-tooltip='Dream Pop、Indie Pop、Lo-Fi'><a href="https://www.youtube.com/watch?v=9ehveFohQpk"target="_blank"> 恐龍的皮
+                </a></td>
+
+            </tr>
+            <tr>
+                <td class='time'>18:00</td>
+                <td colspan="2" class='gray' data-tooltip='Dream pop'>場地整理</td>
+    
+
+            </tr>
+            <tr>
+                <td class='time'>19:00</td>
+                <td class='cs240 orange lab' data-tooltip='實驗搖滾'><a href="https://www.youtube.com/watch?v=ouQwJj1V2pE"target="_blank">美秀集團</a> </td>
+               <td></td>
+
+            </tr>
+            <tr>
+                <td class='time'>20:00</td>
+                <td></td>
+                </td>
+                <td rowspan="1.5" class='cs335 blue lab' data-tooltip='Drill Rap'><a href="https://www.youtube.com/watch?v=vNuBFM6wcZo"target="_blank"> Multiverse</a></td>
+
+            </tr>
+            <tr>
+                <td class='time'>21:00</td>
+                <td class='cs240 orange lab' data-tooltip='Nu-Metal、Electronicore'><a href="https://www.youtube.com/watch?v=nNAjOaFqH_s"target="_blank"> 血肉果汁機</a></td>
+                <td></td>
+
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="container-footer">
+        <div class="section_left">
+            <div class="footer-item">
+                <h4>關於</h4>
+                <nav>
+                    <a href="about.html"><i class="fa fa-angle-right"></i> 起源與由來</a>
+               
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>音樂節</h4>
+                <nav>
+                    <a href="art.html"><i class="fa fa-angle-right"></i> 陣容</a>
+                    <a href="time.html"><i class="fa fa-angle-right"></i> 演出時刻表</a>
+
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>商店</h4>
+                <nav>
+                    <a href="ticket.html"><i class="fa fa-angle-right"></i> 門票</a>
+                    <a href="Goods.html"><i class="fa fa-angle-right"></i> 周邊商品</a>
+
+                </nav>
+            </div>
+        </div>
+        <div  class="txtfooter">
+            <p>台中市公益路2段51號18樓<a href="https://goo.gl/maps/svEVuSPVUZaboieVA" target="_blank"><img src="./icon/icons8-google-maps-old-48.png" alt="mapicon"></p>
+          
+           
+          </div>
+        <div class="section_right">
+            <div class="imglink">
+                <div class="imglink1">
+                    <div class="img_box">
+                        <a href="https://www.facebook.com/Front-end-music-festival-494540370600974/"target="_blank"><img
+                                src="./icon/fb.webp" alt="fb"></a>
+                    </div>
+                    <div class="img_box">
+                        <a href="https://www.instagram.com/front_end_music_festival/"target="_blank"><img src="./icon/ig.png"
+                                alt="ig"></a>
+                    </div>
+                </div>
+                <div class="imglink2">
+                    <div class="img_box">
+                        <a href="https://line.me/ti/p/XgZf7ia1NI"target="_blank"><img src="./icon/line.png" alt="line"></a>
+                    </div>
+
+                    <div class="img_box">
+                        <a href="https://www.youtube.com/watch?v=BRiNV8PZjPk&list=LL&index=38"target="_blank"><img
+                                src="./icon/youtube.png" alt="yt"></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="conpyright">
+        <a href="http://127.0.0.1:5501/open.html">Copyright &copy; 2022 Front end music festival</a>
+    </div>
+    </div>
+    <a id="top-btn" class="backtop">
+        <div class="backtop-pic"> <img src="./backtop.jpg" alt=""></div>
+    </a>
+
+    <script>
+        document.getElementById('top-btn').onclick = function () {
+            window.scrollTo(0, 0);
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

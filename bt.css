@@ -1,0 +1,25 @@
+.backtop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: 1px solid #5cb85c;
+    outline: none;
+    /* background-color: #fff; */
+    /* color: #5cb85c; */
+    cursor: pointer;
+    /* padding: 10px 15px 15px 15px; */
+    border-radius: 10px;
+}
+
+.backtop:hover {
+
+    background-color: #5cb85c;
+    color: #fff;
+}
+    
+    
+    
+    
+    

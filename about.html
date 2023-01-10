@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front end music festival</title>
+    <link rel="icon" href="./I CON.jpg" type="image/x-icon">
+    <script src="./back.js"></script>
+    <link rel="stylesheet" href="./back.css">
+    <link rel="stylesheet" href="./bc.css">
+    <script src="./_js/jquery-3.6.0.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
+    @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: 'Noto Sans TC', sans-serif;
+        /* outline: solid goldenrod; */
+    }
+
+    .main-header {
+        background-color: linear-gradient(0deg, #181718, #eb660e);
+        position: sticky;
+        top: 0;
+        z-index: 99;
+        justify-self: start;
+
+
+    }
+
+    .main-header .container {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        max-width: 1200px;
+        margin: auto;
+        position: relative;
+
+    }
+
+    .main-header .logo {
+        width: 100px;
+        margin-right: 50px;
+    }
+
+    .main-header .logo img {
+        width: 100%;
+        vertical-align: middle;
+    }
+
+    .main-header .main-nav {
+        /* margin: auto; */
+        display: flex;
+        font-size: 20px;
+        padding-left: 0%;
+
+    }
+
+    .main-header .main-nav a {
+        font-family: 'Noto Sans TC', sans-serif;
+        text-decoration: none;
+        color: #fff;
+        padding: 5px 1em;
+        position: relative;
+        transform: translateY(0px);
+        transition: .3s;
+        /* font-size: xx-large; */
+    }
+
+    .main-header .main-nav a:hover {
+        transform: translateY(-10px);
+    }
+
+    .main-header .main-nav a:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        bottom: -5px;
+        height: 0;
+        border-bottom: 1px solid #fff;
+        transition: .5s;
+    }
+
+    .main-header .main-nav a:hover:after {
+        left: 1em;
+        right: 1em;
+    }
+
+
+
+
+
+
+
+    .main-header .flag img {
+
+        padding: auto;
+        width: 30PX;
+        display: inline-block
+    }
+
+    .flag {
+
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+    }
+
+
+
+    .backtext {
+        font-size: 20px;
+        text-align: center;
+
+
+        color: white;
+    }
+
+    .backtext img {
+        padding: 5px;
+        width: 60%;
+        height: 60%;
+
+
+
+    }
+
+    .backtop {
+
+        position: fixed;
+        bottom: 10px;
+        right: 60px;
+        /* z-index: 99; */
+        scroll-behavior: smooth;
+
+    }
+
+    .backtop-pic {
+        width: 3vw;
+        height: 3vw;
+    }
+
+    .backtop img {
+        width: 100%;
+        height: 100%;
+
+        border-radius: 100px;
+        /* object-fit:fill; */
+    }
+
+    #top-btn:hover {
+        cursor: pointer;
+
+    }
+    .big_container{
+        overflow: hidden;
+    }
+</style>
+
+
+
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="demo.html" class="logo">
+                <img src="./icon.png" alt="">
+
+            </a>
+            <nav class="main-nav">
+                <a href="about.html">關於</a>
+                <a href="art.html">表演藝人/樂團</a>
+                <a href="time.html">節目表</a>
+                <a href="ticket.html">門票</a>
+                <a href="Goods.html">周邊商品</a>
+              
+
+
+
+            </nav>
+            <div class="flag ml-auto">
+                <a href="about.html"><img src="./zh-hant.png" alt="tw"></a>
+                <a href="abouten.html"><img src="./en.png" alt="en"></a>
+            </div>
+        </div>
+    </header>
+
+<div class="big_container">
+    <div class="backtext" style="border:2px orange solid;padding:5px;margin: 10px;">
+        <p>前端音樂祭起源於2022年，由台中一名愛好音樂的青年所創辦。<br>
+            取名為前端是因為由於受到程式語言所影響，並試圖讓台灣獨立音樂走在前端上而衍生出來。<br>
+            特色為引入各種音樂曲風，因為音樂不只是因音樂，舉辦人藉由音樂來讓參與者明白音樂的音樂，<br>
+            音樂不只是單獨的一種曲風與個性，如同程式語言一般，需要有眾多的不同的程式語言才能寫出一個網站，<br>
+            而音樂要有不同的曲風以及豐富的人生歷練，才能夠做出一首首膾炙人心的故事。
+          
+            <img src="OPENCIR.jpg" alt="megap">
+
+        </p>
+
+    </div>
+    <!-- <a id="top-btn" class="backtop" ><div class="backtop-pic"> <img src="./backtop.jpg" alt=""></div></a> -->
+   
+    <div class="container-footer">
+        <div class="section_left">
+          <div class="footer-item">
+            <h4>關於</h4>
+            <nav>
+              <a href="about.html"><i class="fa fa-angle-right"></i> 起源與由來</a>
+          
+            </nav>
+          </div>
+          <div class="footer-item">
+            <h4>音樂節</h4>
+            <nav>
+              <a href="./art.html"><i class="fa fa-angle-right"></i> 陣容</a>
+              <a href="time.html"><i class="fa fa-angle-right"></i> 演出時刻表</a>
+  
+            </nav>
+          </div>
+          <div class="footer-item">
+            <h4>商店</h4>
+            <nav>
+              <a href="ticket.html"><i class="fa fa-angle-right"></i> 門票</a>
+              <a href="Goods.html"><i class="fa fa-angle-right"></i> 周邊商品</a>
+  
+            </nav>
+          </div>
+        </div>
+        <div  class="txtfooter">
+          <p>台中市公益路2段51號18樓<a href="https://goo.gl/maps/svEVuSPVUZaboieVA" target="_blank"><img src="./icon/icons8-google-maps-old-48.png" alt="mapicon"></a></p>
+        
+ 
+        </div>
+        <div class="section_right">
+          <div class="imglink">
+            <div class="imglink1">
+              <div class="img_box">
+                <a href="https://www.facebook.com/Front-end-music-festival-494540370600974/"target="_blank"><img src="./icon/fb.webp"
+                    alt="fb"></a>
+              </div>
+              <div class="img_box">
+                <a href="https://www.instagram.com/front_end_music_festival/"target="_blank"><img src="./icon/ig.png" alt="ig"></a>
+              </div>
+            </div>
+            <div class="imglink2">
+              <div class="img_box">
+                <a href="https://line.me/ti/p/XgZf7ia1NI"target="_blank"><img src="./icon/line.png" alt="line"></a>
+              </div>
+  
+              <div class="img_box">
+                <a href="https://www.youtube.com/watch?v=BRiNV8PZjPk&list=LL&index=38"target="_blank"><img src="./icon/youtube.png"
+                    alt="yt"></a>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+      <div class="conpyright">
+        <a href="http://127.0.0.1:5501/open.html">Copyright &copy; 2022 Front end music festival</a>
+      </div>
+    </div>
+    <a id="top-btn" class="backtop">
+      <div class="backtop-pic"> <img src="./backtop.jpg" alt=""></div>
+    </a>
+  
+    <script>
+      document.getElementById('top-btn').onclick = function () {
+        window.scrollTo(0, 0);
+      }
+  
+    </script>
+  
+
+
+</html>

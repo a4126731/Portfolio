@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front end music festival</title>
+    <link rel="icon" href="./I CON.jpg" type="image/x-icon">
+    <script src="./back.js"></script>
+    <link rel="stylesheet" href="./back.css">
+    <link rel="stylesheet" href="./bc.css">
+    <script src="./_js/jquery-3.6.0.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
+    @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: 'Noto Sans TC', sans-serif;
+        /* outline: solid goldenrod; */
+    }
+
+    .main-header {
+        background: linear-gradient(0deg, #181718, #eb660e);
+    }
+
+    .main-header .container {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        max-width: 1200px;
+        margin: auto;
+        position: relative;
+
+    }
+
+    .main-header .logo {
+        width: 100px;
+        margin-right: 50px;
+    }
+
+    .main-header .logo img {
+        width: 100%;
+        vertical-align: middle;
+    }
+
+    .main-header .main-nav {
+        /* margin: auto; */
+        display: flex;
+        font-size: 20px;
+        padding-left: 0%;
+
+    }
+
+    .main-header .main-nav a {
+        font-family: 'Noto Sans TC', sans-serif;
+        text-decoration: none;
+        color: #fff;
+        padding: 5px 1em;
+        position: relative;
+        transform: translateY(0px);
+        transition: .3s;
+        /* font-size: xx-large; */
+    }
+
+    .main-header .main-nav a:hover {
+        transform: translateY(-10px);
+    }
+
+    .main-header .main-nav a:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        bottom: -5px;
+        height: 0;
+        border-bottom: 1px solid #fff;
+        transition: .5s;
+    }
+
+    .main-header .main-nav a:hover:after {
+        left: 1em;
+        right: 1em;
+    }
+
+    .main-header .flag img {
+
+        padding: auto;
+        width: 30PX;
+        display: inline-block
+    }
+
+    .flag {
+
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+    }
+
+    .backtext {
+        font-size: 20px;
+        text-align: center;
+
+        color: white;
+    }
+
+    .backtext img {
+        padding: 50px;
+    }
+
+    .backtop {
+
+        position: fixed;
+        bottom: 10px;
+        right: 60px;
+        /* z-index: 99; */
+
+    }
+
+    .backtop-pic {
+        width: 3vw;
+        height: 3vw;
+    }
+
+    .backtop img {
+        width: 100%;
+        height: 100%;
+
+        border-radius: 100px;
+        /* object-fit:fill; */
+    }
+
+    #top-btn:hover {
+        cursor: pointer;
+    }
+
+    .artconall {
+        width: 1200px;
+
+        margin: auto;
+
+    }
+
+
+    .artcontainer1 {
+        display: flex;
+        margin-top: 20px;
+        text-align: center;
+        position: relative;
+        text-decoration: none;
+
+    }
+
+    .artcontainer2 {
+        display: flex;
+        /* margin: auto; */
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .art img {
+        width: 25vw;
+        height: 40vh;
+        margin: 15px;
+
+    }
+
+    .arttxt h2 {
+        padding-bottom: 10px;
+        margin-bottom: 1.5em;
+        font-weight: 500;
+        font-size: 36px;
+        color: white;
+    }
+
+    .art:hover {
+        transform: translateY(-35px);
+        transition-duration: .75s;
+
+    }
+
+    .art:hover h2 {
+        color: red;
+    }
+
+    .artconall:hover .txt {
+        opacity: 1;
+    }
+
+    .artconall h1 {
+        font-size: 28px;
+        color: rgba(248, 167, 46, 0.918);
+        font-weight: 500;
+    }
+
+    .art h1:after {
+        content: '';
+        display: block;
+        width: 0%;
+        height: 2px;
+        margin: 10px 0;
+        background-color: yellow;
+        transition: width .5s .3s;
+    }
+
+    .art:hover h1:after {
+        width: 100%;
+    }
+
+    .artconall p {
+        font-size: 18px;
+        color: #fff;
+        font-weight: 100;
+
+    }
+</style>
+
+
+
+<body>
+    <header class="main-header">
+        <div class="container">
+            <a href="http://127.0.0.1:5501/demo.html" class="logo">
+                <img src="./icon.png" alt="">
+
+            </a>
+            <nav class="main-nav">
+                <a href="abouten.html">ABOUT</a>
+                <a href="art_en.html">LINE-UP</a>
+                <a href="timeen.html">PROGRAM SCHEDULE</a>
+                <a href="ticketen.html">TICKET</a>
+                <a href="Goodsen.html">GOODS</a>
+      
+
+
+
+            </nav>
+            <div class="flag ml-auto">
+                <a href="art.html"><img src="./zh-hant.png" alt="tw"></a>
+                <a href="art_en.html"><img src="./en.png" alt="en"></a>
+            </div>
+        </div>
+    </header>
+    </div>
+    <div class="artconall">
+        <div class="artcontainer1">
+            <div class="art">
+                <a  style="text-decoration: none;" href="https://www.youtube.com/watch?v=7r0-Qhn-X_s">
+                    <img src="./band/din.jpg" alt="dino">
+                    <div class="intxt">
+                        <h1>Reptiles Band</h1>
+                        <p>The dinosaur combination that walked through the golden song red carpet led everyone back to the Cretaceous</p>
+                    </div>
+                    <div class="arttxt">
+                        <h2>The Dinosaur Skin</h2>
+                </a>
+
+            </div>
+        </div>
+        <div class="art">
+            <a  style="text-decoration: none;" href="https://www.youtube.com/watch?v=Q-EncPy5qVo"> <img src="./band/flesh.png" alt="flesh">
+                <div class="intxt">
+                    <h1>Rough Nu-Metal</h1>
+                    <p>Best metal band in Taiwan,use pig squal to kill the audience</p>
+                </div>
+                <div class="arttxt">
+                    <h2>Flesh Juicer</h2>
+            </a>
+        </div>
+
+    </div>
+    <div class="art">
+        <a  style="text-decoration: none;" href="https://www.youtube.com/watch?v=-ZFIUyYkDQw">
+            <img src="./band/multiverse.jpg" alt="mult">
+
+            <div class="arttxt">
+                <div class="intxt">
+                    <h1>Open the age of rap</h1>
+                    <p>Stand out in the rap show, if you don't want to be hungry,Just drunk Puli water</p>
+                </div>
+                <h2>Multiverse</h2>
+        </a>
+    </div>
+    </div>
+    </div>
+    <div class="artcontainer2">
+        <div class="art">
+            <a  style="text-decoration: none;" href="https://www.youtube.com/watch?v=TZ5jAb0nlwo">
+                <img src="./band/amazing.jpg" alt="am">
+                <div class="intxt">
+                    <h1>Cyberbumpkin</h1>
+                    <p>The most popular experimental band, combining electronic and rock</p>
+                </div>
+                <div class="arttxt">
+                    <h2>Amazing Show</h2>
+            </a>
+        </div>
+    </div>
+    <div class="art">
+        <a  style="text-decoration: none;" href="https://www.youtube.com/watch?v=ltFNlTWDgU8">
+            <img src="./band/wander.jpg" alt="wender">
+            <div class="arttxt">
+                <div class="intxt">
+                    <h1>Let's walk in love together</h1>
+                    <p>The ambiguous object must listen to the band,you will say goodbye to being single.</p>
+                </div>
+                <h2>Wendy wander</h2>
+        </a>
+    </div>
+    </div>
+    <div class="art">
+        <a  style="text-decoration: none;" href="https://www.youtube.com/watch?v=WvjyWEyCpcA">
+        <img src="./band/changeball.jpg" alt="ball">
+        <div class="intxt">
+            <h1>EMO to life</h1>
+            <p>I'm sorry I can't do what I promised you because we're all stranded</p>
+        </div>
+        <div class="arttxt">
+            <h2>Constant&Change</h2></a>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="container-footer">
+        <div class="section_left">
+            <div class="footer-item">
+                <h4>About</h4>
+                <nav>
+                    <a href="abouten.html"><i class="fa fa-angle-right"></i>Origin</a>
+         
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>Festiavl</h4>
+                <nav>
+                    <a href="art_en.html"><i class="fa fa-angle-right"></i>Artitis</a>
+                    <a href="timeen.html"><i class="fa fa-angle-right"></i> Timetable</a>
+
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>Store</h4>
+                <nav>
+                    <a href="ticketen.html"><i class="fa fa-angle-right"></i> Ticket</a>
+                    <a href="Goodsen.html"><i class="fa fa-angle-right"></i> Goods</a>
+
+                </nav>
+            </div>
+        </div>
+        <div  class="txtfooter">
+            <p>18th Floor, No. 51, Section 2, Gongyi Road, Nantun District, Taichung City<a href="https://goo.gl/maps/svEVuSPVUZaboieVA" target="_blank"><img src="./icon/icons8-google-maps-old-48.png" alt="mapicon"></p>
+          
+           
+          </div>
+        <div class="section_right">
+            <div class="imglink">
+                <div class="imglink1">
+                    <div class="img_box">
+                        <a href="https://www.facebook.com/Front-end-music-festival-494540370600974/"target="_blank"><img
+                                src="./icon/fb.webp" alt="fb"></a>
+                    </div>
+                    <div class="img_box">
+                        <a href="https://www.instagram.com/front_end_music_festival/"target="_blank"><img src="./icon/ig.png"
+                                alt="ig"></a>
+                    </div>
+                </div>
+                <div class="imglink2">
+                    <div class="img_box">
+                        <a href="https://line.me/ti/p/XgZf7ia1NI"target="_blank"><img src="./icon/line.png" alt="line"></a>
+                    </div>
+
+                    <div class="img_box">
+                        <a href="https://www.youtube.com/watch?v=BRiNV8PZjPk&list=LL&index=38"target="_blank"><img
+                                src="./icon/youtube.png" alt="yt"></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="conpyright">
+        <a href="http://127.0.0.1:5501/open.html">Copyright &copy; 2022 Front end music festival</a>
+    </div>
+    </div>
+    <a id="top-btn" class="backtop">
+        <div class="backtop-pic"> <img src="./backtop.jpg" alt=""></div>
+    </a>
+
+    <script>
+        document.getElementById('top-btn').onclick = function () {
+            window.scrollTo(0, 0);
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

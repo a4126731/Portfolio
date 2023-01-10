@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
+        @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
+            
+            /* outline-style: auto; */
+        }
+
+   
+
+        .main-footer {
+            /* display: flex; */
+            width: 100%;
+            /* padding: 150px 0 0 0; */
+            /* background: linear-gradient(45deg, #e0924e, #d7580e); */
+            
+        }
+
+        .container-footer {
+            width: 100%;
+            display: flex;
+            margin: auto;
+            background: linear-gradient(45deg, #e0924e, #d7580e);
+            
+        }
+
+        .footer-item {
+            width: 30%;
+            margin: 15px;
+            
+        }
+
+        .footer-item h4 {
+            font-size: 36px;
+            color: #fff;
+            border-bottom: 1px dotted #fff;
+            margin-bottom: .5em;
+            padding-bottom: .5em;
+            margin: 15px;
+        }
+
+        .footer-item nav {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-item nav a {
+            color: #fff;
+            line-height: 1.4;
+            text-decoration: none;
+            font-size: 24px;
+            padding: 5px ;
+            margin: 10px;
+            
+        }
+
+        .footer-item nav a:hover {
+            color: #fa0;
+        }
+
+
+
+
+        .conpyright {
+            width: 100%;
+            text-align: center;
+            /* margin: 150px 0 0; */
+            padding: 10px 0px;
+            background-color: #000000;
+            font-size: 24PX;
+        }
+        .conpyright a{
+            color: #d4d4d4;
+            text-decoration: none;
+        }
+
+
+        .imglink {
+            width: 30%;
+            display: flex;
+            padding: auto;
+            /* margin: 0px 0px 0px 950px; */
+            /* height: 50px; */
+        }
+
+        .imglink img {
+            width: 60px;
+            height: 60px;
+            display: block;
+            padding: 50px;
+        }
+
+        .imglink1 a {
+            margin: 10px;
+        }
+
+        .imglink2 a {
+            margin: 10px;
+            /* padding: auto; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-footer">
+        <div class="footer-item">
+            <h4>關於</h4>
+            <nav>
+                <a href="#"><i class="fa fa-angle-right"></i> 起源與由來</a>
+                <a href="#"><i class="fa fa-angle-right"></i> 常見問題</a>
+            </nav>
+        </div>
+        <div class="footer-item">
+            <h4>演出陣容</h4>
+            <nav>
+                <a href="#"><i class="fa fa-angle-right"></i> 演出陣容</a>
+                <a href="#"><i class="fa fa-angle-right"></i> 時間表</a>
+
+            </nav>
+        </div>
+        <div class="footer-item">
+            <h4>購買專區</h4>
+            <nav>
+                <a href="#"><i class="fa fa-angle-right"></i> 票卷種類</a>
+                <a href="#"><i class="fa fa-angle-right"></i> 周邊商品</a>
+
+            </nav>
+        </div>
+        <div class="imglink">
+            <div class="imglink1">
+                <a href="https://www.facebook.com/Front-end-music-festival-494540370600974/"><img src="./icon/fb.webp" alt="fb"></a>
+                <a href="https://www.instagram.com/front_end_music_festival/"><img src="./icon/ig.png" alt="ig"></a>
+            </div>
+            <div class="imglink2">
+                <a href="https://line.me/ti/p/XgZf7ia1NI"><img src="./icon/line.png" alt="line"></a>
+                <a href="https://www.youtube.com/watch?v=BRiNV8PZjPk&list=LL&index=38"><img src="./icon/youtube.png" alt="yt"></a>
+            </div>
+
+        </div>
+    </div>
+    <div class="conpyright">
+        <a href="http://127.0.0.1:5501/open.html">Copyright &copy; 2022 Front end music festival</a>
+    </div>
+</body>
+
+</html>

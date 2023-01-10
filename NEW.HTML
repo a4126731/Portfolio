@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./_js/jquery-3.6.0.js"></script>
+</head>
+<style>
+     
+     .present {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px;
+}
+
+.cup {
+  position: relative;
+  width: 110px;
+  height: 15px;
+  background-color: black;
+}
+
+.complete {
+  transform: rotate(-10deg);
+}
+
+.cupbody {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+}
+
+.vribbon {
+  position: absolute;
+  width: 20px;
+  height: 110px;
+  background-color: red;
+}
+
+.hribbon {
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  background-color: red;
+}
+
+.loding {
+  position: relative;
+  bottom: 20px;
+  margin: 0 auto;
+  width: 280px;
+  height: 30px;
+  border: 1px solid red;
+  border-radius: 5px;
+  background-color: #ffff;
+  overflow: hidden;
+}
+.loding .bar {
+  background-color: red;
+  width: 0%;
+  height: 100%;
+}
+
+.lodingText {
+  text-align: center;
+}
+</style>
+<body>
+    
+
+    <div class="present">
+        <div class="cup"></div>
+        <div class="cupbody"></div>
+        <div class="vribbon"></div>
+        <div class="hribbon"></div>
+      </div>
+      <div class="lodingPage">
+        <div class="loding">
+          <div class="bar"></div>
+        </div>
+        <div class="lodingText">
+          <h2 class="text"></h2>
+        </div>
+      </div>
+
+      <script>
+        console.log("hihi");
+      console.clear()
+      var persent = 0;
+      
+      var timer = setInterval (function(){
+        
+        $(".bar").css("width",persent+"%")
+        // console.log("剩餘"+persent+"%")
+        $(".text").text(persent+"%")
+        persent+=1
+        if(persent>100){
+          // 新增class給禮物盒用
+          $(".cup").addClass("complete")
+            clearInterval(timer)
+           }
+      },30)
+    </script>
+      
+</body>
+</html>
